@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -32,63 +33,11 @@
                         <a class="nav-link" href="#">About Us</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-primary" type="button" onclick="openForm()">Login</button>
-                <button class="btn btn-outline-primary" type="button" onclick="openFormS()">SignUp</button>
+                <a href="/home/login"><button class="btn btn-outline-primary" type="button">Login</button></a>
+                <a href="/home/signup"><button class="btn btn-outline-primary" type="button" href="/home/signup">SignUp</button></a>
             </div>
         </div>
     </nav>
-    <div class="form-popup" id="Login">
-        <form action="/home/login" class="form-container" method="post">
-            <h1>Login</h1>
-            <label for="Username">username</label>
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-
-            <button type="submit" class="btn">Login</button>
-        </form>
-    </div>
-    <div class="form-popup" id="signup">
-        <form action="/home/signup" class="form-container" method="post">
-            <h1>Sign Up</h1>
-
-            <label for="user"><b>Username</b></label>
-            <input id="user" type="text" placeholder="Enter Username" name="username" required>
-
-            <label for="email"><b>Email</b></label>
-            <input id="email" type="text" placeholder="Enter Email" name="email" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input id="psw" type="password" placeholder="Enter Password" name="password" required>
-
-            <button type="submit" class="btn">SignUp</button>
-        </form>
-    </div>
-
-    <script>
-        function openForm() {
-            document.getElementById("Login").style.display = "block";
-        }
-        function openFormS() {
-            document.getElementById("signup").style.display = "block";
-        }
-
-        document.addEventListener('mouseup', function (e) {
-            let container = document.getElementById('signup');
-            if (!container.contains(e.target)) {
-                container.style.display = 'none';
-            }
-        });
-
-        document.addEventListener('mouseup', function (e) {
-            let container = document.getElementById('Login');
-            if (!container.contains(e.target)) {
-                container.style.display = 'none';
-            }
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
@@ -98,11 +47,6 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - G4_Guidance - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

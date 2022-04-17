@@ -1,5 +1,31 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model G4_Guidance.Models.User_Data;
 @{
+    ViewData["Title"] = "Sign Up";
 }
+<div class="card" id="signup">
+    <form action="/home/signup" method="post">
+        <h1 class="card-header text-center">Sign Up</h1>
+        <div class="card-body">
+            <div class="form-floating mb-3">
+                <input asp-for="username" class="form-control" type="text" placeholder="Joe Doe" required>
+                <label asp-for="username">Username</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="email" class="form-control" type="text" placeholder="jeo@gmail.com" required>
+                <label asp-for="email">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="password" type="password" class="form-control" placeholder="Enter Password" required>
+                <label asp-for="password">Password</label>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-dark">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>

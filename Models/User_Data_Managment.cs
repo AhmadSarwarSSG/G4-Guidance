@@ -7,9 +7,10 @@ namespace G4_Guidance.Models
 {
     public class User_Data_Managment
     {
+        //private string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=G4Guidance;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public bool insertData(User_Data user)
         {
-            string con= @"Data Source=(localdb)\ProjectsV13;Initial Catalog='G4_Guidance';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=G4Guidance;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection connection = new SqlConnection(con);
             connection.Open();
             string query = "insert into LoginInfo(Username, Email, Password) values(@u, @e, @p)";
@@ -32,10 +33,10 @@ namespace G4_Guidance.Models
         }
         public User_Data authneticate(User_Data user)
         {
-            string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog='G4_Guidance';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=G4Guidance;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection connection = new SqlConnection(con);
             connection.Open();
-            string query = "select * from LoginInfo where username=@u";
+            string query = "select * from LoginInfo where Username=@u";
             SqlParameter p1 = new SqlParameter("u", user.username);
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.Add(p1);
@@ -56,8 +57,8 @@ namespace G4_Guidance.Models
         }
         public List<User_Data> getAllUsers()
         {
+            string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=G4Guidance;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             List<User_Data> UserList = new List<User_Data>();
-            string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog='G4_Guidance';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection connection = new SqlConnection(con);
             connection.Open();
             string query = "select * from LoginInfo";
