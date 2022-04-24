@@ -33,6 +33,7 @@ namespace G4_Guidance.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [Route("home/signup")]
         public IActionResult SignUp(string email, string username, string password)
         {
             User_Data user = new User_Data();
@@ -46,7 +47,7 @@ namespace G4_Guidance.Controllers
             }
             return View("index");
         }
-        [Route("home/index")]
+        [Route("home/Login")]
         public IActionResult Login(string username, string password)
         {
             User_Data user = new User_Data();
@@ -59,12 +60,13 @@ namespace G4_Guidance.Controllers
                 {
                     if (user.password == password)
                     {
+                        ViewBag.Message = user;
                         return View("Success");
                     }
                 }
-                return View("Faild");
+                return View("Failed");
             }
-            return View("Faild");
+            return View("index");
         }
     }
 }
