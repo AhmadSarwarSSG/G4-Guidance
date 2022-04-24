@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G4 Guidance</title>
+    <link rel="icon" type="image/x-icon" href="~/css/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="~/css/logo.png" alt="G4 Guidance" title="G4 Guidance" width="60" height="60">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find University</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PlayList</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-primary" type="button" onclick="openForm()">Login</button>
+                <button class="btn btn-outline-primary" type="button" onclick="openFormS()">SignUp</button>
+            </div>
+        </div>
+    </nav>
+    <div class="form-popup" id="Login">
+        <form action="/home/index" class="form-container" method="post">
+            <h1>Login</h1>
+
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+    <div class="form-popup" id="signup">
+        <form action="/home/index" class="form-container" method="post">
+            <h1>Sign Up</h1>
+
+            <label for="user"><b>Username</b></label>
+            <input id="user" type="text" placeholder="Enter Username" name="username" required>
+
+            <label for="email"><b>Email</b></label>
+            <input id="email" type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input id="psw" type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit" class="btn">SignUp</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("Login").style.display = "block";
+        }
+        function openFormS() {
+            document.getElementById("signup").style.display = "block";
+        }
+
+        document.addEventListener('mouseup', function (e) {
+            let container = document.getElementById('signup');
+            if (!container.contains(e.target)) {
+                container.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('mouseup', function (e) {
+            let container = document.getElementById('Login');
+            if (!container.contains(e.target)) {
+                container.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - G4_Guidance - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
