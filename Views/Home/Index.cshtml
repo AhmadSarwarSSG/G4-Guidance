@@ -2,9 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>WELCOME TO G4 Guidance</h1>
-<h3>Our goal is guide you to the best university of Pakistan</h3>
-<ul>
-    <li>PUCIT</li>
-    <li>Fast</li>
-</ul>
+<h1 class="text-center">WELCOME TO G4 Guidance</h1>
+<table class="table table-dark table-striped">
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+    </tr>
+    @for (int i = 0; i < @ViewBag.Data.Count; i++)
+    {
+        <tr>
+            <td>@ViewBag.Data[i].username</td>
+            <td>@ViewBag.Data[i].email</td>
+        </tr>
+    }
+</table>

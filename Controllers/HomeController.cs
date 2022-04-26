@@ -20,6 +20,13 @@ namespace G4_Guidance.Controllers
 
         public IActionResult Index()
         {
+            User_Data_Managment managment = new User_Data_Managment();
+            List<User_Data> UserList = managment.getAllUsers();
+            ViewBag.Data = UserList;
+            foreach(User_Data u in UserList)
+            {
+                string ss = u.username;
+            }
             return View();
         }
 
@@ -34,6 +41,7 @@ namespace G4_Guidance.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         [Route("home/signup")]
+        [HttpPost]
         public IActionResult SignUp(string email, string username, string password)
         {
             User_Data user = new User_Data();
@@ -48,6 +56,7 @@ namespace G4_Guidance.Controllers
             return View("index");
         }
         [Route("home/Login")]
+        [HttpPost]
         public IActionResult Login(string username, string password)
         {
             User_Data user = new User_Data();

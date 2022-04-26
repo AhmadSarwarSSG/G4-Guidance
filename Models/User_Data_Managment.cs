@@ -54,5 +54,31 @@ namespace G4_Guidance.Models
                 return null;
             }
         }
+        public List<User_Data> getAllUsers()
+        {
+            List<User_Data> UserList = new List<User_Data>();
+            string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog='G4_Guidance';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection connection = new SqlConnection(con);
+            connection.Open();
+            string query = "select * from LoginInfo";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (sdr.HasRows)
+            {
+                while (sdr.Read())
+                {
+                    User_Data user = new User_Data();
+                    user.username = sdr[1].ToString();
+                    user.password = sdr[3].ToString();
+                    user.email = sdr[2].ToString();
+                    UserList.Add(user);
+                }
+                return UserList;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
