@@ -1,9 +1,15 @@
-﻿@*
+﻿@*Stronlgy typed view are those that are deifned along with the specific model for which they are designed*@
+@model G4_Guidance.Models.User_Data;
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "Success";
 }
-@using G4_Guidance.Models
+@using G4_Guidance.Models;
 
-<h1>Login Succeed</h1>
-<h3>@ViewBag.Message.username Logged In</h3>
+<h1 style="color:lawngreen">Login Succeed</h1>
+<h2 style="color:deepskyblue">Welcome to G4 Guidance</h2>
+<hr style="color:blueviolet"/>
+<h3>@Model.username</h3>
+<h3>@Model.email</h3>

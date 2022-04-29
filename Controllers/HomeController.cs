@@ -60,8 +60,8 @@ namespace G4_Guidance.Controllers
                 {
                     if (user.password == password)
                     {
-                        ViewBag.Message = user;
-                        return View("Success");
+                        ViewBag.User_Data = user;
+                        return View("Success", user);
                     }
                 }
                 return View("Failed");

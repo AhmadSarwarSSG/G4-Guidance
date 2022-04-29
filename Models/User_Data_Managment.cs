@@ -45,6 +45,7 @@ namespace G4_Guidance.Models
                 while(sdr.Read())
                 {
                     user.password = sdr[3].ToString();
+                    user.email = sdr[2].ToString();
                 }
                 return user;
             }
