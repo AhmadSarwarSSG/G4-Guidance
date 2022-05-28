@@ -1,18 +1,244 @@
-﻿@{
+﻿@using G4_Guidance.Models;
+@{
     ViewData["Title"] = "Home Page";
 }
+<!-------------Banner Section------->
+<section id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="promo-title">Get Admission Now!</p>
+                <p>
+                    G4 Guidance is a platform that'll help you to get admission in your dream University of Pakistan'
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eum debitis ab ratione nostrum
+                    aliquam sequi dicta ipsum cumque! Repellat explicabo eaque tenetur laudantium enim quo quas
+                    provident impedit veritatis.
+                </p>
+                <button class="btn" id="promo-btn">
+                    Find University <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="~/src/20220526_091855_0000.png" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+    <img src="~/src/End.png" id="endSection">
+</section>
 
-<h1 class="text-center">WELCOME TO G4 Guidance</h1>
-<table class="table table-dark table-striped">
-    <tr>
-        <th>Username</th>
-        <th>Email</th>
-    </tr>
-    @for (int i = 0; i < @ViewBag.Data.Count; i++)
-    {
-        <tr>
-            <td>@ViewBag.Data[i].username</td>
-            <td>@ViewBag.Data[i].email</td>
-        </tr>
-    }
-</table>
+<section class="services">
+    <div class="container text-center">
+        <h1 class="title">What We Offter?</h1>
+        <div class="row text-center">
+            <div class="col-md-4 services">
+                <img src="~/src/20220526_091855_0001.png" class="services-img">
+                <h4>Blogs</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse error ipsum nihil, facere et
+                    aperiam, eaque perspiciatis fugiat dolorum autem voluptas!
+                </p>
+            </div>
+
+            <div class="col-md-4 services">
+                <img src="~/src/20220526_091855_0002.png" class="services-img">
+                <h4>Counseling</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse error ipsum nihil, facere et
+                    aperiam, eaque perspiciatis fugiat dolorum autem voluptas!
+                </p>
+            </div>
+            <div class="col-md-4 services">
+                <img src="~/src/20220526_091855_0003.png" class="services-img">
+                <h4>Videos</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse error ipsum nihil, facere et
+                    aperiam, eaque perspiciatis fugiat dolorum autem voluptas!
+                </p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 services">
+                <img src="~/src/20220526_091855_0004.png" class="services-img">
+                <h4>Tips</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse error ipsum nihil, facere et
+                    aperiam, eaque perspiciatis fugiat dolorum autem voluptas!
+                </p>
+            </div>
+
+            <div class="col-md-4 services">
+                <img src="~/src/20220526_091855_0005.png" class="services-img">
+                <h4>List of Universities</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse error ipsum nihil, facere et
+                    aperiam, eaque perspiciatis fugiat dolorum autem voluptas!
+                </p>
+            </div>
+            <div class="col-md-4 services">
+                <img src="~/src/20220526_091855_0006.png" class="services-img">
+                <h4>Degree Programs</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse error ipsum nihil, facere et
+                    aperiam, eaque perspiciatis fugiat dolorum autem voluptas!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="Numbers">
+    <div class="container text-center">
+        <h1 class="title">We are in Numbers</h1>
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Universities</div>
+                        <div class="card-text">250+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Degrees</div>
+                        <div class="card-text">700+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Students</div>
+                        <div class="card-text">142000+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Awards</div>
+                        <div class="card-text">50</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</section>
+<section class="blogs">
+    <div class="container text-center">
+        <h1 class="title"> Our Featured Blogs</h1>
+        <div class="row text-center">
+            <div class="col-md-4 services">
+                <div class="card">
+                    <img src="~/src/images.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's
+                            content.
+                        </p>
+                        <a href="#" class="btn btn-blog">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 services">
+                <div class="card">
+                    <img src="~/src/images2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's
+                            content.
+                        </p>
+                        <a href="#" class=" btn btn-blog">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 services">
+                <div class="card">
+                    <img src="~/src/index.4jpg.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's
+                            content.
+                        </p>
+                        <a href="#" class=" btn btn-blog">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 services">
+                <div class="card">
+                    <img src="~/src/index.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's
+                            content.
+                        </p>
+                        <a href="#" class=" btn btn-blog">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 services">
+                <div class="card">
+                    <img src="~/src/index1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's
+                            content.
+                        </p>
+                        <a href="#" class=" btn btn-blog">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 services">
+                <div class="card">
+                    <img src="~/src/index2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's
+                            content.
+                        </p>
+                        <a href="#" class=" btn btn-blog">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="different">
+    <div class="container text-center">
+        <h1 class="title">How we are different from others?</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/src/20220526_091855_0007.png" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi quae soluta nisi dolor,
+                    natus officia iusto nulla amet quam laboriosam, possimus, quidem assumenda est sed. Placeat
+                    reiciendis beatae cupiditate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit
+                    sit, vitae, ea nihil exercitationem deserunt modi repudiandae nemo ut doloremque perspiciatis,
+                    ipsam mollitia. Aliquam odit impedit error cumque, laudantium natus. Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Rem, ratione nesciunt corrupti incidunt libero natus impedit
+                    voluptatibus neque ad ut molestiae aliquid magnam repellat illum dolorum sit vero placeat
+                    officia.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<partial name="_subcribeform" />

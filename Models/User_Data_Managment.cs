@@ -8,7 +8,7 @@ namespace G4_Guidance.Models
     public class User_Data_Managment
     {
         //private string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=G4Guidance;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        public bool insertData(User_Data user)
+        public bool insertData(signup user)
         {
             string con = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=G4Guidance;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection connection = new SqlConnection(con);
