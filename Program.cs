@@ -14,6 +14,8 @@ namespace G4_Guidance
     {
         public static void Main(string[] args)
         {
+            var context = new G4GuidanceContext();
+            LoginInfo user = new LoginInfo();
             CreateHostBuilder(args).Build().Run();
         }
 

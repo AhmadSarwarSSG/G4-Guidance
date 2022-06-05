@@ -18,6 +18,9 @@ namespace G4_Guidance.Controllers
             _logger = logger;
         }
 
+        public PartialViewResult UserData(){
+            return PartialView("_MyPartial");
+        }
         public IActionResult Index()
         {
             User_Data_Managment managment = new User_Data_Managment();
@@ -25,6 +28,14 @@ namespace G4_Guidance.Controllers
             ViewBag.List = UserList;
             ViewData["List"] = UserList;
             return View("index", UserList);
+        }
+        public IActionResult FindUniversity()
+        {
+            return View();
+        }
+        public IActionResult Playlist()
+        {
+            return View();
         }
         public IActionResult blog()
         {
@@ -46,12 +57,17 @@ namespace G4_Guidance.Controllers
         }
         public IActionResult SignUp(signup su)
         {
-            User_Data_Managment managment = new User_Data_Managment();
+            var context = new G4GuidanceContext();
+            LoginInfo info = new LoginInfo();
             if(su.username!=null&&su.password!=null&&su.email!=null)
             {
                 if (ModelState.IsValid)
                 {
-                    managment.insertData(su);
+                    info.Username = su.username;
+                    info.Email = su.email;
+                    info.Password = su.password;
+                    context.LoginInfo.Add(info);
+                    context.SaveChanges();
                     return RedirectToAction("index", "home");
                 }
                 return View();
@@ -63,23 +79,21 @@ namespace G4_Guidance.Controllers
         }
         public IActionResult Login(User_Data user)
         {
-            User_Data user2 = new User_Data();
-            User_Data_Managment managment = new User_Data_Managment();
-            user2.username = user.username;
+            var context = new G4GuidanceContext();
+            var queryy = context.LoginInfo.Where(u => u.Username == user.username);
             if(user.username!=null&&user.password!=null)
             {
                 if (ModelState.IsValid)
                 {
-                    user2 = managment.authneticate(user2);
-                    if (user != null)
+                    if (queryy.First().Password==user.password)
                     {
-                        if (user.password == user2.password)
-                        {
-                            ViewBag.User_Data = user;
-                            return View("Success", user);
-                        }
+                        ViewBag.User_Data = user;
+                        return View("Success", user);
                     }
-                    return View("Failed");
+                    else
+                    {
+                        return View("Failed");
+                    }
                 }
                 else
                 {
